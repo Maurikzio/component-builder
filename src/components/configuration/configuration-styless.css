@@ -1,0 +1,9 @@
+.configuration{
+    background-color: gold;
+    flex-grow: 1;
+    padding: 20px;
+}
+.configuration-inner-wrapper{
+    background-color: rgb(124, 206, 124);
+    padding: 0px 30px;
+}

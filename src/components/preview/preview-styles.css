@@ -1,0 +1,9 @@
+.preview {
+    background-color: pink;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.preview-inner-wrapper{
+    padding: 20px 60px;
+}
