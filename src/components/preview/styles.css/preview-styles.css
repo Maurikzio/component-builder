@@ -62,3 +62,12 @@
 .preview-item.basic input:focus{
     outline: none;
 }
+
+.preview-helpers{
+    color: grey    
+}
+.preview-helpers h3{
+    font-size: 25px;
+    margin-bottom: 0px;
+    /* background-color: hotpink; */
+}
