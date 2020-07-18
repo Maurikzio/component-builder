@@ -77,6 +77,11 @@ function App() {
     setComponents(updatedComponents)
   }
 
+  const deleteComponent = (id) => {
+    const newComponents = components.filter(component => component.id !== id)
+    setComponents(newComponents)
+  }
+
 
   const componentsReady = components.filter( component => component.type && component.label);
 
@@ -86,6 +91,7 @@ function App() {
         components={components} 
         onCreateComponent={createComponent} 
         onUpdateComponent={updateComponent}
+        onDeleteComponent={deleteComponent}
       />
       <Preview 
         components={componentsReady} 

@@ -43,8 +43,15 @@ const Component = (props) => {
         })
     }
 
+    const handleRemoveComponent = () => {
+        props.onDeleteComponent(props.id)
+    }
+
     return(
         <div className='component-wrapper'>
+            
+            <span className='delete-btn' onClick={handleRemoveComponent}>&#10008;</span>
+
             <div className='inner'>
                 <div className='component-type'>
                     <select value={type} onChange={handleTypeChange}>

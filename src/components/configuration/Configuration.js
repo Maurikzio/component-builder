@@ -16,6 +16,7 @@ const Configuration = (props) => {
                 <ComponentsList 
                     components={props.components} 
                     onUpdateComponent={props.onUpdateComponent}
+                    onDeleteComponent={props.onDeleteComponent}
                 />
                 <div className='configuration-btn-container'>
                     <button onClick={handleCreateComponent}>Add component</button>

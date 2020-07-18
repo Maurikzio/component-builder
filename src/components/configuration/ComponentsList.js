@@ -10,6 +10,7 @@ const ComponentsList = (props) => {
             label={component.label}
             options={component.options}
             onUpdateComponent={props.onUpdateComponent}
+            onDeleteComponent={props.onDeleteComponent}
         />
     ))
     return (
