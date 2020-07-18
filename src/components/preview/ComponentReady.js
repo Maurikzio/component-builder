@@ -11,11 +11,12 @@ const ComponentReady = (props) => {
             }
         })
     }
-
+    console.log(props)
     return (
         <div>
             <p>{props.label}</p>
             <input type={props.type} defaultValue={props.content} onChange={handleInputChange}/>
+            {props.options.length === 0 ? null : 'options here'}
         </div>
     )
 }

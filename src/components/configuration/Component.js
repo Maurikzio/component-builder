@@ -57,7 +57,7 @@ const Component = (props) => {
                     </select>
                 </div>
                 <div className='component-label'>
-                    <input value={label} onChange={handleLabelChange} placeholder="Give me a name..."/>
+                    <input value={label} onChange={handleLabelChange} placeholder="Message"/>
                 </div>
             </div>
             <div className='component-options'>

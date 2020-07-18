@@ -1,36 +1,41 @@
-
-
 .component-wrapper {
-    /* background-color: grey; */
+    /* background-color: yellow; */
     display: flex;
-    /* margin: 40px 0px; */
     flex-direction: column;
-    justify-content: center;
-    padding: 20px;
+    padding: 20px 50px;
     
 }
 
 .inner{
     display: flex;  
-    justify-content: center;
+    background-color: teal;
+}
+.component-type {
+    /* background-color: tomato; */
 }
 
 .component-type select{
-    /* background-color: hotpink; */
     padding: 3px 10px ;
     font-size: 15px;
+    font-weight: 800;
     border: 2px solid black;
     border-right: none;
 }
 .component-type select:focus{
     outline: none;
 }
+.component-label{
+    width: 100%;
+    /* background-color: tomato; */
+}
 
 .component-label input{
     padding: 3px 10px ;
     font-size: 16.5px;
     border: 2px solid black;
-    
+    width: 100%;
+    font-weight: 400;
+    box-sizing: border-box;
 }
 
 .component-label input:focus{
@@ -38,9 +43,7 @@
 }
 
 .component-options {
-    /* justify-content: center; */
-    /* display: flex; */
-    /* background-color: orange; */
-    max-width: 330px;
-    margin: auto;
+    /* max-width: 330px; */
+    /* margin: auto; */
+    /* background-color: rgb(243, 37, 1); */
 }

@@ -6,19 +6,26 @@
 .options-wrapper form {
     display: flex;
     flex-wrap: wrap;
-    max-width: 330px;
+    /* background-color: yellowgreen; */
+    /* max-width: 330px; */
     /* text-align: center; */
-    /* justify-content: flex-start; */
+    justify-content: center;
 }
 .options-wrapper form label{
     margin: 5px 3px;
     padding: 8px 10px 8px 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 12px;
     font-weight: 600;
 }
 .options-wrapper form label:hover{
     cursor: pointer;
+}
+.options-wrapper .empty{
+    width: 100%;
+}
+.options-wrapper form .alone{
+    align-self: center;
 }
 
 .options-wrapper form button{

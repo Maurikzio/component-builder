@@ -67,7 +67,6 @@ function App() {
   }
       
   const updateComponent = (data) => {
-    // console.log(data.updates)
     const updatedComponents = components.map( component => {
       if(component.id === data.id){
         return {...component, ...data.updates}
@@ -78,7 +77,6 @@ function App() {
     setComponents(updatedComponents)
   }
 
-  // console.log(components)
 
   const componentsReady = components.filter( component => component.type && component.label);
 

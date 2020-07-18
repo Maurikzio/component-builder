@@ -51,7 +51,7 @@ const Options = (props) => {
 
     return (
         <div className='options-wrapper'>
-            <form>
+            <form className={options.length===0 ? 'empty': ''}>
                 {
                     options.map( option => (
                         <label key={option.id} className={option.checked ? 'checked' : 'unchecked'}>
@@ -65,7 +65,7 @@ const Options = (props) => {
                         </label>
                     ))
                 }
-                <button onClick={createOption}>+</button>
+                <button onClick={createOption} className={options.length===0 ? 'alone': ''}>+</button>
             </form>
         </div>
     )
