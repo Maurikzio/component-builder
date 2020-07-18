@@ -15,6 +15,7 @@ const Preview = (props) => {
             <p><span role='img' aria-label="Error">❗️</span>Try adding a new component</p>
             <p><span role='img' aria-label="Error">❗️</span>Change the <strong>type</strong> of the component</p>
             <p><span role='img' aria-label="Error">❗️</span>Change the <strong>message</strong>  of the component</p>
+            <p><span role='img' aria-label="Error">❓</span>Add at least one option doing click on <strong className='helper-add'>+</strong></p>
         </div>
     }else {
         components = props.components.map( component => (

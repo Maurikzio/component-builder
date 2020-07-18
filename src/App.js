@@ -40,6 +40,29 @@ const initialComponents = [
   },
   {
     id: uuidv4(),
+    type: 'radio',
+    label: 'Dummy radio',
+    content: '',
+    options:[
+      {
+        id: uuidv4(),
+        name: `Option 1`,
+        checked: false,
+      },
+      {
+        id: uuidv4(),
+        name: `Option 2`,
+        checked: false,
+      },
+      {
+        id: uuidv4(),
+        name: `Option 3`,
+        checked: false,
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
     type: '',
     label: '',
     content: '',
@@ -58,7 +81,18 @@ function createNewComponent(){
   return component;
 }
 
-function App() {
+function componentIsValid(component) {
+  if(component.type && component.label){
+    if((component.type === 'checkbox' || component.type === 'radio' ) && component.options.length === 0){
+      return false;
+    }
+    return true;
+  }
+  // return false;
+}
+
+
+const App = () => {
   const [ components, setComponents ] = useState(initialComponents);
 
 
@@ -67,7 +101,7 @@ function App() {
   }
       
   const updateComponent = (data) => {
-    console.log(data.updates);
+    // console.log(data.updates);
     const updatedComponents = components.map( component => {
       if(component.id === data.id){
         return {...component, ...data.updates}
@@ -83,17 +117,7 @@ function App() {
     setComponents(newComponents)
   }
 
-  // console.log({components})
-
-  const componentsReady = components.filter( component => {
-                              if(component.type && component.label){
-                                if(component.type === 'checkbox' && component.options.length === 0){
-                                  return null;
-                                }
-                                return component;
-                              }
-                              return null;
-                            });
+  const componentsReady = components.filter(componentIsValid)
 
   return (
     <div className='app'>

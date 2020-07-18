@@ -10,11 +10,13 @@ const Options = (props) => {
     const updateOptions = (e, id) => {
         const updatedOptions = props.options.map( option => {
             if(option.id === id){
-                return {...option, checked: e.target.checked}
+                return (props.type === 'checkbox') ? { ...option, checked: e.target.checked } : { ...option, checked: true }
             }else {
-                return option;
+                // return option;
+                return (props.type === 'checkbox') ? option : { ...option, checked: false }
             }
         })
+        
         // setOptions(updatedOptions);
         // console.log(updatedOptions);
         props.onUpdateComponent({
@@ -24,7 +26,6 @@ const Options = (props) => {
             }
         })
     }
-
 
 
     const createOption = (e) => {
@@ -48,8 +49,6 @@ const Options = (props) => {
             }
         })
     }
-
-
 
     return (
         <div className='options-wrapper'>

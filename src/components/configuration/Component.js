@@ -1,21 +1,7 @@
 import React, { useState } from 'react';
 import './styles/component-styles.css';
-// import { v4 as uuidv4 } from 'uuid';
 import Options from './Options';
 
-
-// const opts = [
-//     {
-//       id: uuidv4(),
-//       name: 'option1',
-//       checked: false,
-//     },
-//     {
-//       id: uuidv4(),
-//       name: 'option2',
-//       checked: false,
-//     }
-//   ];
 
 const Component = (props) => {
     const [ type, setType ] = useState(props.type);
@@ -68,11 +54,11 @@ const Component = (props) => {
                 </div>
             </div>
             <div className='component-options'>
-                {(props.type === 'checkbox') && 
+                {(props.type === 'checkbox' || props.type === 'radio' ) && 
                     <Options
                         key={props.id}
                         id={props.id}
-                        type={props.type}
+                        type={type}
                         options={props.options}
                         onUpdateComponent={props.onUpdateComponent}
                     />

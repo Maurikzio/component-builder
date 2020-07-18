@@ -16,9 +16,10 @@ const ComponentReady = (props) => {
     const updateOptions = (e, id) => {
         const updatedOptions = props.options.map( option => {
             if(option.id === id){
-                return {...option, checked: e.target.checked}
+                return props.type === 'checkbox' ? {...option, checked: e.target.checked} : {...option, checked: true}
             }else {
-                return option;
+                // return option;
+                return props.type === 'checkbox' ? option : {...option, checked: false}
             }
         })
 
@@ -34,7 +35,7 @@ const ComponentReady = (props) => {
     const options = props.options.map(option => (
         <label key={option.id} className={option.checked ? 'checked' : 'unchecked'}>
             <input
-                type='checkBox'
+                type={props.type}
                 name={option.name}
                 checked={option.checked}
                 onChange={(e) => updateOptions(e, option.id)}
@@ -43,7 +44,7 @@ const ComponentReady = (props) => {
         </label>
     ))
 
-    if(props.type === 'checkbox'){
+    if(props.type === 'checkbox' || props.type === 'radio'){
         return (
             <div className='preview-item adv'>
                 <p>{props.label}</p>
