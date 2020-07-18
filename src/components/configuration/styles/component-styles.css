@@ -2,7 +2,7 @@
     /* background-color: yellow; */
     display: flex;
     flex-direction: column;
-    padding: 20px 50px;
+    padding: 20px 0px;
     
 }
 
@@ -10,9 +10,7 @@
     display: flex;  
     background-color: teal;
 }
-.component-type {
-    /* background-color: tomato; */
-}
+
 
 .component-type select{
     padding: 3px 10px ;
@@ -40,10 +38,4 @@
 
 .component-label input:focus{
     outline: none;
-}
-
-.component-options {
-    /* max-width: 330px; */
-    /* margin: auto; */
-    /* background-color: rgb(243, 37, 1); */
 }

@@ -6,18 +6,18 @@ import './styles/options-styles.css';
 
 const Options = (props) => {
     const [ counter, setCounter] = useState(props.options.length+1);
-    const [ options, setOptions ] = useState(props.options)
+    // const [ options, setOptions ] = useState(props.options)
 
     
     const updateOptions = (e, id) => {
-        const updatedOptions = options.map( option => {
+        const updatedOptions = props.options.map( option => {
             if(option.id === id){
                 return {...option, checked: e.target.checked}
             }else {
                 return option;
             }
         })
-        setOptions(updatedOptions);
+        // setOptions(updatedOptions);
 
         props.onUpdateComponent({
             id: props.id,
@@ -37,9 +37,9 @@ const Options = (props) => {
           checked: false,
         }
       
-        const newOptions = [...options, newOption];
+        const newOptions = [...props.options, newOption];
 
-        setOptions(newOptions);
+        // setOptions(newOptions);
 
         props.onUpdateComponent({
             id: props.id,
@@ -51,9 +51,9 @@ const Options = (props) => {
 
     return (
         <div className='options-wrapper'>
-            <form className={options.length===0 ? 'empty': ''}>
+            <form className={props.options.length === 0 ? 'empty': ''}>
                 {
-                    options.map( option => (
+                    props.options.map( option => (
                         <label key={option.id} className={option.checked ? 'checked' : 'unchecked'}>
                             <input
                                 type='checkBox'
@@ -65,7 +65,7 @@ const Options = (props) => {
                         </label>
                     ))
                 }
-                <button onClick={createOption} className={options.length===0 ? 'alone': ''}>+</button>
+                <button onClick={createOption} className={props.options.length===0 ? 'alone': ''}>+</button>
             </form>
         </div>
     )

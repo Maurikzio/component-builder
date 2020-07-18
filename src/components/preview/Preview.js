@@ -1,6 +1,7 @@
 import React from 'react';
 
-import './preview-styles.css';
+import './styles.css/preview-styles.css';
+
 import ComponentReady from './ComponentReady';
 
 

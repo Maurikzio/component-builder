@@ -53,8 +53,10 @@
 }
 
 .checked {
-    border: 1px solid green;
-    /* background: green; */
+    /* border: 1px solid green; */
+    border: 1px solid black;
+    background: black;
+    color: white;
   }
   .unchecked{
     border: 1px solid grey;
