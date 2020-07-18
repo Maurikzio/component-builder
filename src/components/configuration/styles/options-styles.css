@@ -1,0 +1,54 @@
+.options-wrapper{
+    /* background-color: pink; */
+    display: flex;
+    margin-top: 10px;
+}
+.options-wrapper form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 330px;
+    /* text-align: center; */
+    /* justify-content: flex-start; */
+}
+.options-wrapper form label{
+    margin: 5px 3px;
+    padding: 8px 10px 8px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.options-wrapper form label:hover{
+    cursor: pointer;
+}
+
+.options-wrapper form button{
+    align-self: center;
+    background-color: transparent;
+    border: 1px solid grey;
+    padding: 4px 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    font-weight: 800;
+}
+.options-wrapper form button:hover{
+    cursor: pointer;
+}
+
+.options-wrapper form button:focus{
+    outline: none;
+    /* background-color: tomato; */
+}
+
+.options-wrapper form label input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.checked {
+    border: 1px solid green;
+    /* background: green; */
+  }
+  .unchecked{
+    border: 1px solid grey;
+  }

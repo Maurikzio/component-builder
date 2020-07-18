@@ -1,0 +1,32 @@
+.configuration{
+    /* background-color: gold; */
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 50%;
+}
+.configuration-inner-wrapper{
+    /* background-color: rgb(124, 206, 124); */
+    padding: 0px 20px;
+}
+
+.configuration-btn-container{
+    /* background-color: brown; */
+    text-align: center;
+    /* padding: 0px 30px; */
+}
+.configuration-btn-container button{
+    width: 330px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 800;
+    border: none;
+    margin-top: 40px;
+}
+.configuration-btn-container button:hover{
+    cursor: pointer;
+}
+.configuration-btn-container button:focus{
+    outline: none;
+}

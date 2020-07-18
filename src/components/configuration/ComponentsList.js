@@ -6,6 +6,9 @@ const ComponentsList = (props) => {
         <Component 
             key={component.id} 
             id={component.id}
+            type={component.type}
+            label={component.label}
+            options={component.options}
             onUpdateComponent={props.onUpdateComponent}
         />
     ))

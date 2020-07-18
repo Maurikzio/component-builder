@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './configuration-styless.css';
+import './styles/configuration-styless.css';
 import ComponentsList from './ComponentsList';
 
 const Configuration = (props) => {
@@ -17,7 +17,9 @@ const Configuration = (props) => {
                     components={props.components} 
                     onUpdateComponent={props.onUpdateComponent}
                 />
-                <button onClick={handleCreateComponent}>Add Component</button>
+                <div className='configuration-btn-container'>
+                    <button onClick={handleCreateComponent}>Add Component</button>
+                </div>
             </div>
 
         </div>
