@@ -83,9 +83,9 @@ function App() {
     setComponents(newComponents)
   }
 
-  // console.log({components})
+  console.log({components})
 
-  const componentsReady = components.filter( component => component.type && component.label);
+  const componentsReady = components.filter( component => component.type && component.label && component.options.length !== 0);
 
   return (
     <div className='app'>

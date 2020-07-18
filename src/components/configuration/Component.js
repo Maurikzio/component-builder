@@ -68,7 +68,7 @@ const Component = (props) => {
                 </div>
             </div>
             <div className='component-options'>
-                {props.type === 'checkbox' && 
+                {(props.type === 'checkbox' || props.type === 'radio' ) && 
                     <Options
                         key={props.id}
                         id={props.id}
