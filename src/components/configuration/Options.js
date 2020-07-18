@@ -8,7 +8,6 @@ const Options = (props) => {
     const [ counter, setCounter] = useState(props.options.length+1);
     // const [ options, setOptions ] = useState(props.options)
 
-    
     const updateOptions = (e, id) => {
         const updatedOptions = props.options.map( option => {
             if(option.id === id){
@@ -18,7 +17,7 @@ const Options = (props) => {
             }
         })
         // setOptions(updatedOptions);
-
+        // console.log(updatedOptions);
         props.onUpdateComponent({
             id: props.id,
             updates: {
