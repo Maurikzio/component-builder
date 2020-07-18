@@ -6,6 +6,7 @@ import ComponentReady from './ComponentReady';
 
 
 const Preview = (props) => {
+
     let components = '';
 
     if(props.components.length === 0){

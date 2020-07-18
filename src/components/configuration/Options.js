@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-
 import './styles/options-styles.css';
 
 
@@ -26,6 +25,8 @@ const Options = (props) => {
         })
     }
 
+
+
     const createOption = (e) => {
         e.preventDefault();
         setCounter(counter+1);
@@ -48,6 +49,8 @@ const Options = (props) => {
         })
     }
 
+
+
     return (
         <div className='options-wrapper'>
             <form className={props.options.length === 0 ? 'empty': ''}>
@@ -55,7 +58,7 @@ const Options = (props) => {
                     props.options.map( option => (
                         <label key={option.id} className={option.checked ? 'checked' : 'unchecked'}>
                             <input
-                                type='checkBox'
+                                type= {props.type}
                                 name={option.name}
                                 checked={option.checked}
                                 onChange={(e) => updateOptions(e, option.id)}

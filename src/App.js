@@ -72,7 +72,7 @@ function App() {
       if(component.id === data.id){
         return {...component, ...data.updates}
       }else {
-        return component
+        return component;
       }
     });
     setComponents(updatedComponents)
@@ -83,9 +83,17 @@ function App() {
     setComponents(newComponents)
   }
 
-  console.log({components})
+  // console.log({components})
 
-  const componentsReady = components.filter( component => component.type && component.label && component.options.length !== 0);
+  const componentsReady = components.filter( component => {
+                              if(component.type && component.label){
+                                if(component.type === 'checkbox' && component.options.length === 0){
+                                  return null;
+                                }
+                                return component;
+                              }
+                              return null;
+                            });
 
   return (
     <div className='app'>
