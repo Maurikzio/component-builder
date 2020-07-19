@@ -3,72 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import Configuration from './components/configuration/Configuration';
 import Preview from './components/preview/Preview';
 import './App.css';
+import { initialComponents } from './initialComponents.js';
 
-
-const initialComponents = [
-  {
-    id: uuidv4(),
-    type: 'text',
-    label: 'Lorem ipsum',
-    content: 'Item',
-    options:[]
-  },
-  {
-    id: uuidv4(),
-    type: 'password',
-    label: 'Qwerty',
-    content: '1234567',
-    options:[]
-  },
-  {
-    id: uuidv4(),
-    type: 'checkbox',
-    label: 'Choice',
-    content: '',
-    options:[
-      {
-        id: uuidv4(),
-        name: `Option 1`,
-        checked: false,
-      },
-      {
-        id: uuidv4(),
-        name: `Option 2`,
-        checked: false,
-      }
-    ]
-  },
-  {
-    id: uuidv4(),
-    type: 'radio',
-    label: 'Dummy radio',
-    content: '',
-    options:[
-      {
-        id: uuidv4(),
-        name: `Option 1`,
-        checked: false,
-      },
-      {
-        id: uuidv4(),
-        name: `Option 2`,
-        checked: false,
-      },
-      {
-        id: uuidv4(),
-        name: `Option 3`,
-        checked: false,
-      }
-    ]
-  },
-  {
-    id: uuidv4(),
-    type: '',
-    label: '',
-    content: '',
-    options:[]
-  }
-]
 
 function createNewComponent(){
   const component = {
@@ -76,7 +12,8 @@ function createNewComponent(){
     type: '',
     label: '',
     content: '',
-    options:[]
+    options:[],
+    params:{min: '0', max: '10'}
   }
   return component;
 }
@@ -86,9 +23,17 @@ function componentIsValid(component) {
     if((component.type === 'checkbox' || component.type === 'radio' ) && component.options.length === 0){
       return false;
     }
+    if(component.type === 'range'){
+      if(!!component.params.min && !!component.params.max){
+        return true;
+      }else{
+        return false;
+      }
+    }
     return true;
+  }else{
+    return false;
   }
-  // return false;
 }
 
 
@@ -118,6 +63,8 @@ const App = () => {
   }
 
   const componentsReady = components.filter(componentIsValid)
+
+  // console.log({components})
 
   return (
     <div className='app'>
