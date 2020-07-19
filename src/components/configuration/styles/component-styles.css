@@ -1,7 +1,4 @@
 .component-wrapper {
-    /* background-color: yellow; */
-    /* display: flex; */
-    /* flex-direction: column; */
     max-width: 400px;
     margin: 0 auto;
     padding: 20px 0px;
@@ -10,27 +7,46 @@
 
 .inner{
     display: flex;  
-    /* background-color: teal; */
+}
+
+.component-type{
+    position: relative;
+}
+.component-type::before{
+    /* content: '\25BC'; */
+    content: '\25E2';
+    color: rgb(92, 91, 91);
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 9px;
+    transform: rotate(45deg);
+    padding: 5px;
 }
 
 .component-type select{
-    padding: 3px 10px ;
+    padding: 3px 20px 3px 10px;
     font-size: 15px;
-    font-weight: 800;
+    font-weight: 600;
     border: 2px solid black;
-    border-right: none;
+    margin-right: -2px;
+    background-color: white;
+    height: 30px;
+    border-radius: 0px;
+    -webkit-appearance: none;
 }
+
+
 .component-type select:focus{
     outline: none;
 }
-.component-label{
-    width: 100%;
-    /* background-color: tomato; */
+.component-type select:hover{
+    cursor: pointer;
 }
 
-/* .component-label:hover ~ .b {
-    background-color: orange;
-} */
+.component-label{
+    width: 100%;
+}
 
 .component-label input{
     padding: 3px 10px ;
@@ -40,6 +56,7 @@
     font-weight: 400;
     box-sizing: border-box;
     background: transparent;
+    height: 30px;
 }
 
 .component-label input:focus{
@@ -47,19 +64,16 @@
 }
 
 .delete-btn{
-    /* display: block; */
     position: absolute;
     padding: 1px 5px;
     top: 20px;
     right: -20px;
     font-size: 18px;
-    /* text-transform: uppercase; */
     font-weight: 800;
     border-radius: 5px;
     color: rgb(202, 199, 199);
 }
 .delete-btn:hover{
-    /* background-color: red; */
     color: red;
     cursor: pointer;
 }

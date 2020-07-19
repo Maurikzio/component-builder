@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css/components-ready-styles.css';
+import './styles/components-ready-styles.css';
 
 const ComponentReady = (props) => { 
     const handleInputChange = e => {
@@ -44,7 +44,7 @@ const ComponentReady = (props) => {
 
     if(props.type === 'checkbox' || props.type === 'radio'){
         return (
-            <div className='preview-item adv'>
+            <div className='preview-item radio-check'>
                 <p>{props.label}</p>
                 <div className='preview-options-wrapper'>
                     {options}

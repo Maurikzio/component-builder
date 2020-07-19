@@ -1,14 +1,10 @@
 .options-wrapper{
-    /* background-color: pink; */
     display: flex;
     margin-top: 10px;
 }
 .options-wrapper form {
     display: flex;
     flex-wrap: wrap;
-    /* background-color: yellowgreen; */
-    /* max-width: 330px; */
-    /* text-align: center; */
     justify-content: center;
 }
 .options-wrapper form label{
@@ -43,7 +39,6 @@
 
 .options-wrapper form button:focus{
     outline: none;
-    /* background-color: tomato; */
 }
 
 .options-wrapper form label input{
@@ -53,7 +48,6 @@
 }
 
 .checked {
-    /* border: 1px solid green; */
     border: 1px solid black;
     background: black;
     color: white;
