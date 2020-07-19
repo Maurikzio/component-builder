@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import './styles/component-styles.css';
 import Options from './Options';
+import Parameters from './Parameters';
 
 
 const Component = (props) => {
+    // console.log(props.params);
     const [ type, setType ] = useState(props.type);
     const [ label, setLabel ] = useState(props.label);
 
     const handleTypeChange = e => {
         const { target: { value } } = e;    
         setType(value);
+        let newUpdates = { type: value};
+        if(value === 'range'){
+            newUpdates = {
+                type: value,
+                content: '',
+                params: { min: 5, max: 20}
+            }
+        }
         props.onUpdateComponent({
             id: props.id,
-            updates:{
-                type: value
-            }
+            updates: newUpdates
         })
     }
 
@@ -31,6 +39,24 @@ const Component = (props) => {
 
     const handleRemoveComponent = () => {
         props.onDeleteComponent(props.id)
+    }
+
+    let extras = [];
+
+    if(type === 'checkbox' || type === 'radio'){
+        extras = <Options
+                        // key={props.id}
+                        id={props.id}
+                        type={type}
+                        options={props.options}
+                        onUpdateComponent={props.onUpdateComponent}
+                    />
+    }else if(type === 'range'){
+        extras = <Parameters 
+            id={props.id}
+            params={props.params}
+            onUpdateComponent={props.onUpdateComponent}
+        />
     }
 
     return(
@@ -54,15 +80,7 @@ const Component = (props) => {
                 </div>
             </div>
             <div className='component-options'>
-                {(props.type === 'checkbox' || props.type === 'radio' ) && 
-                    <Options
-                        key={props.id}
-                        id={props.id}
-                        type={type}
-                        options={props.options}
-                        onUpdateComponent={props.onUpdateComponent}
-                    />
-                }
+                {extras}
             </div>
         </div>
     )

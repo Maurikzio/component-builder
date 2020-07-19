@@ -15,8 +15,9 @@
 
 .preview-inner-wrapper{
     /* background: orangered; */
-    padding: 0px 40px;
-    max-width: 350px;
+    /* padding: 0px 40px; */
+    max-width: 400px;
+    margin: 20px auto;
 }
 
 .preview-options-wrapper{

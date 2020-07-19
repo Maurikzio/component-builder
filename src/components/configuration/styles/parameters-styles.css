@@ -1,0 +1,19 @@
+.param-items {
+    /* background: orange; */
+    display: flex;
+    justify-content: center;
+
+}
+.param-item{
+    display: flex;
+    margin: 0px 5px;
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.param-item input{
+    width: 60px;
+}
+.param-item input:focus{
+    outline: none;
+}

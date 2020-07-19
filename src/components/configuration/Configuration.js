@@ -11,8 +11,8 @@ const Configuration = (props) => {
 
     return (
         <div className='configuration'>
-            <h2>Components config</h2>
             <div className='configuration-inner-wrapper'>
+            <h2>Components config</h2>
                 <ComponentsList 
                     components={props.components} 
                     onUpdateComponent={props.onUpdateComponent}

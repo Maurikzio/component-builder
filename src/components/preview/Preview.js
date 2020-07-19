@@ -26,6 +26,7 @@ const Preview = (props) => {
                 label={component.label}
                 content={component.content}
                 options={component.options}
+                params={component.params}
                 onUpdateComponent={props.onUpdateComponent}
             />        
         ))

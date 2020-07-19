@@ -9,10 +9,12 @@ const ComponentsList = (props) => {
             type={component.type}
             label={component.label}
             options={component.options}
+            params={component.params} 
             onUpdateComponent={props.onUpdateComponent}
             onDeleteComponent={props.onDeleteComponent}
         />
     ))
+
     return (
         <div>
             {components}

@@ -1,0 +1,24 @@
+.preview-item.range .range-items{
+    display: flex;
+    padding: 0px;
+    list-style: none;
+    justify-content: space-around;
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.preview-item.range .range-min{
+    flex-grow: 1;
+}
+.preview-item.range .range-max{
+    flex-grow: 1;
+    text-align: right;
+    
+}
+.preview-item.range .range-content{
+    flex-grow: 1;
+    text-align: center;
+    font-size: 15px;
+
+}
