@@ -6,37 +6,6 @@ import './App.css';
 import { initialComponents } from './initialComponents.js';
 
 
-function createNewComponent(){
-  const component = {
-    id: uuidv4(),
-    type: '',
-    label: '',
-    content: '',
-    options:[],
-    params:{min: '0', max: '10'}
-  }
-  return component;
-}
-
-function componentIsValid(component) {
-  if(component.type && component.label){
-    if((component.type === 'checkbox' || component.type === 'radio' ) && component.options.length === 0){
-      return false;
-    }
-    if(component.type === 'range'){
-      if(!!component.params.min && !!component.params.max){
-        return true;
-      }else{
-        return false;
-      }
-    }
-    return true;
-  }else{
-    return false;
-  }
-}
-
-
 const App = () => {
   const [ components, setComponents ] = useState(initialComponents);
 
@@ -83,3 +52,32 @@ const App = () => {
 }
 
 export default App;
+
+function createNewComponent(){
+  const component = {
+    id: uuidv4(),
+    type: '',
+    label: '',
+    content: '',
+    options:[],
+    params:{min: '0', max: '10'}
+  }
+  return component;
+}
+
+function componentIsValid(component) {
+  if(component.type && component.label){
+    if((component.type === 'checkbox' || component.type === 'radio' ) && component.options.length === 0){
+      return false;
+    }else if( component.type === 'range'){
+      if(!!component.params.min && !!component.params.max){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    return true;
+  }else{
+    return false;
+  }
+}

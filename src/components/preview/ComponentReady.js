@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/components-ready-styles.css';
 
 const ComponentReady = (props) => { 
+
     const handleInputChange = e => {
         const  { target: { value } } = e;    
         props.onUpdateComponent({
